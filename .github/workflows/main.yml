@@ -44,5 +44,5 @@ jobs:
       # Check SSL certs
       - name: Check Cert expiry
         run: |
-          chmod +x "${GITHUB_WORKSPACE}/mcert/mcert-manager.sh"
-          ./mcert/mcert-manager.sh
+          chmod +x "${GITHUB_WORKSPACE}/msite/msite"
+          ./msite/msite -e harrythedevopsguy@gmail.com -s '#devops' https://www.linkedin.com http://github.com https://www.facebook.com https://www.nixtutor.com/
