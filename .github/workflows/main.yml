@@ -45,4 +45,4 @@ jobs:
       - name: Check Cert expiry
         run: |
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
-          ./msite/msite -e harrythedevopsguy@gmail.com -s '#devops' https://www.linkedin.com http://github.com https://www.facebook.com https://www.nixtutor.com/
+          ./msite/msite -e harrythedevopsguy@gmail.com -s '#devops' scientificamerican.com howstuffworks.com psu.edu pcmag.com answers.yahoo.com nba.com
