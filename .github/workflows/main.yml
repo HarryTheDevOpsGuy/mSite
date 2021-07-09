@@ -45,36 +45,8 @@ jobs:
       - name: Check Website Status
         run: |
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
-          ./msite/msite -e harrythedevopsguy@gmail.com -s '#devops' www.google.com youtube.com apple.com cloudflare.com microsoft.com www.blogger.com support.google.com play.google.com wordpress.org mozilla.org docs.google.com linkedin.com en.wikipedia.org youtu.be maps.google.com europa.eu adobe.com vimeo.com drive.google.com plus.google.com googleusercontent.com accounts.google.com sites.google.com vk.com cnn.com github.com facebook.com istockphoto.com pt.wikipedia.org bp.blogspot.com bbc.co.uk amazon.com t.me uol.com.br feedburner.com imdb.com forbes.com fr.wikipedia.org google.co.jp dropbox.com mail.google.com mail.ru brandbucket.com w3.org creativecommons.org slideshare.net www.yahoo.com msn.com issuu.com 
+          ./msite/msite -e harrythedevopsguy@gmail.com -m 3 -s '#devops'  bp.blogspot.com bbc.co.uk amazon.com t.me uol.com.br feedburner.com imdb.com forbes.com fr.wikipedia.org google.co.jp dropbox.com mail.google.com mail.ru brandbucket.com w3.org creativecommons.org slideshare.net www.yahoo.com msn.com issuu.com 
           ls -la /tmp/
-          
-          
-  msite_job_2:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    container:
-      image: harry97/mcloud-toolkit:latest
-      env:
-        SLACK_CLI_TOKEN: ${{ secrets.DEFAULT_SLACK_TOKEN }}
-        MT_0001_SLACK_CLI_TOKEN: ${{ secrets.DEFAULT_SLACK_TOKEN }}
-        SENDGRID_API_KEY: ${{ secrets.DEFAULT_SENDGRID_TOKEN }}
-        EMAIL_FROM: mcloudautomation@gmail.com
-        EMAIL_MODE: SENDGRID
-        REPLY_EMAIL_ADDRESS: 'Harry <HarryTheDevOpsGuy@gmail.com>'
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-        with:
-          repository: HarryTheDevOpsGuy/mConfigs
-          token: ${{ secrets.GH_PERSONAL_TOKEN }}
-
-      # Check SSL certs
-      - name: Check Website Status
-        run: |
-          chmod +x "${GITHUB_WORKSPACE}/msite/msite"
-          ./msite/msite -e harrythedevopsguy@gmail.com -s '#devops' instagram.com cnil.fr rt.com sfgate.com code.google.com oup.com addtoany.com nature.com amazon.es cnbc.com godaddy.com dw.com ietf.org yandex.ru shutterstock.com pixabay.com theatlantic.com hp.com lefigaro.fr sendspace.com secureserver.net ggpht.com abc.es nbcnews.com privacyshield.gov ytimg.com picasa.google.com alexa.com tripadvisor.com unesco.org ft.com e-monsite.com finance.yahoo.com oracle.com themeforest.net www.wikipedia.org chicagotribune.com bing.com goodreads.com gofundme.com cornell.edu umich.edu home.neustar techcrunch.com metro.co.uk nikkei.com bloglovin.com allaboutcookies.org theverge.com urbandictionary.com cambridge.org ea.com my.yahoo.com box.com netflix.com buzzfeed.com google.nl britannica.com ipv4.google.com news.com.au yahoo.co.jp ikea.com qq.com columbia.edu gmail.com variety.com disqus.com thetimes.co.uk storage.googleapis.com zendesk.com kickstarter.com googleblog.com lycos.com rapidshare.com npr.org php.net photobucket.com loc.gov www.livejournal.com pinterest.co.uk 
-          ls -la /tmp/
       
           
