@@ -33,6 +33,8 @@ jobs:
         EMAIL_MODE: SENDGRID
         REPLY_EMAIL_ADDRESS: 'Harry <HarryTheDevOpsGuy@gmail.com>'
         EMAIL_NOTIFICATION: 'true'
+        SLACK_ALERT_REPEAT_INTERVAL: '15'
+        EMAIL_ALERT_REPEAT_INTERVAL: '30'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -46,7 +48,7 @@ jobs:
       - name: Check Website Status
         run: |
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
-          ./msite/msite -v -e harrythedevopsguy@gmail.com -m 60 -s '#devops'  bp.blogspot.com bbc.co.uk amazon.com t.me uol.com.br feedburner.com imdb.com forbes.com fr.wikipedia.org google.co.jp dropbox.com mail.google.com mail.ru brandbucket.com w3.org creativecommons.org slideshare.net www.yahoo.com msn.com issuu.com 
+          ./msite/msite -v -e harrythedevopsguy@gmail.com -m 61 -s '#devops'  bp.blogspot.com bbc.co.uk amazon.com t.me uol.com.br feedburner.com imdb.com forbes.com fr.wikipedia.org google.co.jp dropbox.com mail.google.com mail.ru brandbucket.com w3.org creativecommons.org slideshare.net www.yahoo.com msn.com issuu.com 
           ls -la /tmp/
 
       
