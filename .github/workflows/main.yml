@@ -68,7 +68,8 @@ jobs:
         run: |
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
           source ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh
-          ${GITHUB_WORKSPACE}/msite/msite -v -e "${EMAIL_TO}" -m 10 -s "${SLACK_CHANNEL:-'#devops'}" -u "${USERID}" $(echo ${DOMAINS_LIST[@]})
+          ${GITHUB_WORKSPACE}/msite/msite --vars ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh -v 
+          # ${GITHUB_WORKSPACE}/msite/msite -v -e "${EMAIL_TO}" -m 10 -s "${SLACK_CHANNEL:-'#devops'}" -u "${USERID}" $(echo ${DOMAINS_LIST[@]})
           
       - name: Push changes to repo
         run: |
