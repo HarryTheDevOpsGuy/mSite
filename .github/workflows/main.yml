@@ -40,7 +40,7 @@ jobs:
         EMAIL_NOTIFICATION: 'true'
         SLACK_ALERT_REPEAT_INTERVAL: '15'
         EMAIL_ALERT_REPEAT_INTERVAL: '30'
-        LOOP_REPEAT_INTERVAL: '10'
+        #LOOP_REPEAT_INTERVAL: '10'
         OUTPUT_LOG_DIR: '/tmp/logdata'
         USERID: msite_001
         
@@ -68,9 +68,7 @@ jobs:
         run: |
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
           source ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh
-          echo  "${EMAIL_TO}" -m 2 -s "${SLACK_CHANNEL:-'#devops'}" -u "${USERID}" $(echo ${DOMAINS_LIST[@]})
-          ${GITHUB_WORKSPACE}/msite/msite -v -e "${EMAIL_TO}" -m 2 -s "${SLACK_CHANNEL:-'#devops'}" -u "${USERID}" $(echo ${DOMAINS_LIST[@]}) 
-          ls -la
+          ${GITHUB_WORKSPACE}/msite/msite -v -e "${EMAIL_TO}" -m 10 -s "${SLACK_CHANNEL:-'#devops'}" -u "${USERID}" $(echo ${DOMAINS_LIST[@]})
           
       - name: Push changes to repo
         run: |
