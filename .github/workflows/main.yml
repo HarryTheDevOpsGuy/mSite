@@ -6,7 +6,7 @@ name: Monitor Site Status v1
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/30 * * * *'
+    - cron:  '*/15 * * * *'
 
   # Triggers the workflow on push or pull request events but only for the master branch
 #   push:
@@ -65,7 +65,7 @@ jobs:
       - name: Check Website Status
         run: |
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
-          ${GITHUB_WORKSPACE}/msite/msite --config ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh -v -m 25
+          ${GITHUB_WORKSPACE}/msite/msite --config ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh -v -m 12
           
       - name: Push changes to repo
         run: |
