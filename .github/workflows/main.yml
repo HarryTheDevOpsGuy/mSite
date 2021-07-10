@@ -67,8 +67,8 @@ jobs:
       - name: Check Website Status
         run: |
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
-          source ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh
-          ${GITHUB_WORKSPACE}/msite/msite --vars ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh -v -m 5
+          #source ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh
+          ${GITHUB_WORKSPACE}/msite/msite --config ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh -v -m 5
           # ${GITHUB_WORKSPACE}/msite/msite -v -e "${EMAIL_TO}" -m 10 -s "${SLACK_CHANNEL:-'#devops'}" -u "${USERID}" $(echo ${DOMAINS_LIST[@]})
           
       - name: Push changes to repo
