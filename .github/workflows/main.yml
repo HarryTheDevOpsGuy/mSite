@@ -82,8 +82,13 @@ jobs:
           git checkout ${USERID}
           git add .
           git status
-          git commit -am "update logdata for ${USERID}"
-          git push ${REMOTE} ${USERID}      
+          FCOUNT="$(git diff --name-only --cached|wc -l)"
+          if [[ ${FCOUNT} -gt 0 ]]; then
+            git commit -am "update logdata for ${USERID}"
+            git push ${REMOTE} ${USERID} 
+          else 
+            echo "NO Changed"
+          fi
 
       
           
