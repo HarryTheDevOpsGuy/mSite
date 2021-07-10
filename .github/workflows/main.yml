@@ -36,7 +36,7 @@ jobs:
         SLACK_ALERT_REPEAT_INTERVAL: '15'
         EMAIL_ALERT_REPEAT_INTERVAL: '30'
         LOOP_REPEAT_INTERVAL: '10'
-        OUTPUT_LOG_DIR: "${GITHUB_WORKSPACE}/logdata"
+        OUTPUT_LOG_DIR: ${{ github.workspace }}/logdata
         USERID: msite_001
         
 
