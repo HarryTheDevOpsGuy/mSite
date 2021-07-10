@@ -69,7 +69,7 @@ jobs:
           cd ${GITHUB_WORKSPACE}
           pwd
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
-          ls -la ${GITHUB_WORKSPACE}/msite/msite/vars/
+          ls -la ${GITHUB_WORKSPACE}/msite/msite/
           cat ${GITHUB_WORKSPACE}/msite/msite/vars/${USERID}.sh
           #${GITHUB_WORKSPACE}/msite/msite -v -e "${EMAIL_TO}" -m 2 -s "${SLACK_CHANNEL:-'#devops'}" --uid "${USERID}"  
           ls -la
