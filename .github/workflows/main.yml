@@ -38,8 +38,8 @@ jobs:
         EMAIL_MODE: SENDGRID
         REPLY_EMAIL_ADDRESS: 'Harry <HarryTheDevOpsGuy@gmail.com>'
         EMAIL_NOTIFICATION: 'true'
-        SLACK_ALERT_REPEAT_INTERVAL: '15'
-        EMAIL_ALERT_REPEAT_INTERVAL: '10'
+        SLACK_ALERT_REPEAT_INTERVAL: '10'
+        EMAIL_ALERT_REPEAT_INTERVAL: '60'
         #LOOP_REPEAT_INTERVAL: '10'
         OUTPUT_LOG_DIR: '/tmp/logdata'
         USERID: msite_001
@@ -67,18 +67,14 @@ jobs:
       - name: Check Website Status
         run: |
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
-          #source ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh
-          ${GITHUB_WORKSPACE}/msite/msite --config ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh -v -m 5
-          # ${GITHUB_WORKSPACE}/msite/msite -v -e "${EMAIL_TO}" -m 10 -s "${SLACK_CHANNEL:-'#devops'}" -u "${USERID}" $(echo ${DOMAINS_LIST[@]})
+          ${GITHUB_WORKSPACE}/msite/msite --config ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh -v -m 200
           
       - name: Push changes to repo
         run: |
           cd ${OUTPUT_LOG_DIR}
-          ls -la 
           REMOTE=https://${{ secrets.GH_PERSONAL_TOKEN }}@github.com/HarryTheDevOpsGuy/logdata.git
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git config user.name "${{ github.actor }}"
-
           git pull ${REMOTE}
           git checkout ${USERID}
           git add .
