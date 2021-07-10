@@ -23,6 +23,11 @@ jobs:
   msite_job_1:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: /opt
+        shell: bash
+        
     container:
       image: harry97/mcloud-toolkit:latest
       env:
@@ -59,7 +64,7 @@ jobs:
       - name: Check Website Status
         run: |
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
-          ./msite/msite -v -e harrythedevopsguy@gmail.com -m 4 -s '#devops'  bp.blogspot.com bbc.co.uk amazon.com t.me uol.com.br feedburner.com imdb.com forbes.com fr.wikipedia.org google.co.jp dropbox.com mail.google.com mail.ru brandbucket.com w3.org creativecommons.org slideshare.net www.yahoo.com msn.com issuu.com 
+          ${GITHUB_WORKSPACE}/msite/msite -v -e harrythedevopsguy@gmail.com -m 4 -s '#devops'  bp.blogspot.com bbc.co.uk amazon.com t.me uol.com.br feedburner.com imdb.com forbes.com fr.wikipedia.org google.co.jp dropbox.com mail.google.com mail.ru brandbucket.com w3.org creativecommons.org slideshare.net www.yahoo.com msn.com issuu.com 
           ls -la /tmp/
           
       - name: Push changes to repo
