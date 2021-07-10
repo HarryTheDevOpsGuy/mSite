@@ -66,9 +66,11 @@ jobs:
       # Check SSL certs
       - name: Check Website Status
         run: |
+          pwd
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
-          source ${GITHUB_WORKSPACE}/msite/msite/vars/${USERID}.sh
-          ${GITHUB_WORKSPACE}/msite/msite -v -e "${EMAIL_TO}" -m 2 -s "${SLACK_CHANNEL:-'#devops'}" --uid "${USERID}"  
+          ls -la 
+          #source ${GITHUB_WORKSPACE}/msite/msite/vars/${USERID}.sh
+          #${GITHUB_WORKSPACE}/msite/msite -v -e "${EMAIL_TO}" -m 2 -s "${SLACK_CHANNEL:-'#devops'}" --uid "${USERID}"  
           ls -la
           
       - name: Push changes to repo
