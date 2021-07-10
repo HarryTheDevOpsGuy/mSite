@@ -54,7 +54,7 @@ jobs:
           REMOTE=https://${{ secrets.GH_PERSONAL_TOKEN }}@github.com/HarryTheDevOpsGuy/logdata.git
           git clone ${REMOTE} ${OUTPUT_LOG_DIR}
           cd ${OUTPUT_LOG_DIR}
-          git checkout ${{ env.USERID }} || git checkout -b ${{ env.USERID }}
+          git checkout ${USERID} || git checkout -b ${USERID}
           ls -la 
           pwd
 
@@ -79,11 +79,11 @@ jobs:
           git config user.name "${{ github.actor }}"
 
           git pull ${REMOTE}
-          git checkout ${{ env.USERID }}
+          git checkout ${USERID}
           git add .
           git status
           git commit -am "update logdata for ${USERID}"
-          git push ${REMOTE} ${{ env.USERID }}      
+          git push ${REMOTE} ${USERID}      
 
       
           
