@@ -55,8 +55,6 @@ jobs:
           git clone ${REMOTE} ${OUTPUT_LOG_DIR}
           cd ${OUTPUT_LOG_DIR}
           git checkout ${USERID} || git checkout -b ${USERID}
-          ls -la 
-          pwd
 
       - uses: actions/checkout@v2
         with:
