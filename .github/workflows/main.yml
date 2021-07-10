@@ -48,12 +48,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-        with:
-          repository: HarryTheDevOpsGuy/logdata
-          token: ${{ secrets.GH_PERSONAL_TOKEN }}
-          path: ${{ env.OUTPUT_LOG_DIR }}
-          ref: ${{ env.USERID }}
           
       - name: Clone logdata to repo
         run: |
@@ -61,6 +55,8 @@ jobs:
           git clone ${REMOTE} ${OUTPUT_LOG_DIR}
           cd ${OUTPUT_LOG_DIR}
           git checkout ${{ env.USERID }} || git checkout -b ${{ env.USERID }}
+          ls -la 
+          pwd
 
       - uses: actions/checkout@v2
         with:
