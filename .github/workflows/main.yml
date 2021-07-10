@@ -66,6 +66,7 @@ jobs:
       # Check SSL certs
       - name: Check Website Status
         run: |
+          cd ${GITHUB_WORKSPACE}
           pwd
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
           ls -la 
