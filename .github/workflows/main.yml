@@ -39,7 +39,7 @@ jobs:
         REPLY_EMAIL_ADDRESS: 'Harry <HarryTheDevOpsGuy@gmail.com>'
         EMAIL_NOTIFICATION: 'true'
         SLACK_ALERT_REPEAT_INTERVAL: '15'
-        EMAIL_ALERT_REPEAT_INTERVAL: '30'
+        EMAIL_ALERT_REPEAT_INTERVAL: '10'
         #LOOP_REPEAT_INTERVAL: '10'
         OUTPUT_LOG_DIR: '/tmp/logdata'
         USERID: msite_001
