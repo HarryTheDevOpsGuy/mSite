@@ -36,7 +36,7 @@ jobs:
         SLACK_ALERT_REPEAT_INTERVAL: '15'
         EMAIL_ALERT_REPEAT_INTERVAL: '30'
         LOOP_REPEAT_INTERVAL: '10'
-        OUTPUT_LOG_DIR: ${{ github.workspace }}/logdata
+        OUTPUT_LOG_DIR: '/tmp/logdata'
         USERID: msite_001
         
 
@@ -47,7 +47,7 @@ jobs:
         with:
           repository: HarryTheDevOpsGuy/logdata
           token: ${{ secrets.GH_PERSONAL_TOKEN }}
-          path: logdata
+          path: ${{ env.OUTPUT_LOG_DIR }}
           ref: ${{ env.USERID }}
 
       - uses: actions/checkout@v2
