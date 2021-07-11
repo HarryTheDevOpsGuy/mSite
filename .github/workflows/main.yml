@@ -65,7 +65,7 @@ jobs:
       - name: Check Website Status
         run: |
           chmod +x "${GITHUB_WORKSPACE}/msite/msite"
-          ${GITHUB_WORKSPACE}/msite/msite --config ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh -v -m 12
+          ${GITHUB_WORKSPACE}/msite/msite --config ${GITHUB_WORKSPACE}/msite/vars/${USERID}.sh -v -m 1
           
       - name: Push changes to repo
         run: |
