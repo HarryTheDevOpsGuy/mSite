@@ -39,4 +39,8 @@ jobs:
           free -h
           df -h
           lscpu
+          netstat -ntulp
+          ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -20
+          
+          
           
