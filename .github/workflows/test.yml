@@ -36,3 +36,7 @@ jobs:
           echo test, and deploy your project.
           ifconfig
           curl ifconfig.me
+          free -h
+          df -h
+          lscpu
+          
