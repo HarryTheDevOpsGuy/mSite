@@ -54,27 +54,27 @@ uptime:
     sent_alert: 12-2-2023 10:34
     statusCode: 5xx
   mstatus-web.onrender.com:
-    last_alert: '2023-08-20 08:20:49'
+    last_alert: '2023-08-20 08:20:55'
     status: down
     status_code: '-'
-    timestamp: '2023-08-20 08:20:49'
+    timestamp: '2023-08-20 08:20:55'
   thevsp.in:
-    last_alert: '2023-08-20 08:20:49'
+    last_alert: '2023-08-20 08:20:55'
     status: up
     status_code: 200
-    timestamp: '2023-08-20 08:20:49'
+    timestamp: '2023-08-20 08:20:55'
   webgrowsolution.com:
-    last_alert: '2023-08-20 08:20:51'
+    last_alert: '2023-08-20 08:20:57'
     status: up
     status_code: 200
-    timestamp: '2023-08-20 08:20:51'
+    timestamp: '2023-08-20 08:20:57'
   www.acnosoft.com:
-    last_alert: '2023-08-20 08:20:52'
+    last_alert: '2023-08-20 08:20:58'
     status: up
     status_code: 200
-    timestamp: '2023-08-20 08:20:52'
+    timestamp: '2023-08-20 08:20:58'
   www.onlinefront.in:
-    last_alert: '2023-08-20 08:20:50'
+    last_alert: '2023-08-20 08:20:56'
     status: up
     status_code: 200
-    timestamp: '2023-08-20 08:20:50'
+    timestamp: '2023-08-20 08:20:56'
