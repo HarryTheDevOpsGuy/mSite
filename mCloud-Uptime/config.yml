@@ -1,6 +1,6 @@
 global:
   uid: uptime
-  output_cfg: 'outputs_status.yml
+  output_cfg: 'outputs_status.yml'
   reminder: 50
   timeout: 10
   repeat_interval: 30
