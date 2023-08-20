@@ -1,0 +1,118 @@
+global:
+  uid: uptime
+  output_cfg: 'outputs_status.yml
+  reminder: 50
+  timeout: 10
+  repeat_interval: 30
+  credits: '*Powered By* : Harry'
+  user_agents: 
+    - 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; Xbox; Xbox One) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edge/44.18363.8131'
+    - 'Mozilla/5.0 (Macintosh; Intel Mac OS X 12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.42'
+    - 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
+    - 'Mozilla/5.0 (Windows Mobile 10; Android 10.0; Microsoft; Lumia 950XL) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Mobile Safari/537.36 Edge/40.15254.603'
+    - 'Mozilla/5.0 (Linux; Android 12; SM-S906N Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/80.0.3987.119 Mobile Safari/537.36'
+    - 'Mozilla/5.0 (Linux; Android 12; Pixel 6 Build/SD1A.210817.023; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/94.0.4606.71 Mobile Safari/537.36'
+    - 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 6P Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.83 Mobile Safari/537.36'
+    - 'Mozilla/5.0 (Linux; Android 10; HTC Desire 21 pro 5G) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.127 Mobile Safari/537.36'
+    - 'Mozilla/5.0 (iPod touch; CPU iPhone 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1'
+    - 'Mozilla/5.0 (X11; CrOS x86_64 14989.107.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.5195.134 Safari/537.36'
+    - 'Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.5195.136 Mobile Safari/537.36'
+
+
+
+notifications:
+   - id: slackid
+     type: slack
+     token: SLACK_CLI_TOKEN
+     channel: '#mcloud-alerts'
+     mentions:
+        - "@Harry"
+   - id: mcloudtelegram
+     type: telegram
+     bottoken: MCLOUD_TG_TOKEN
+     groupid: '-737229532' # mCloud
+     mentions:
+        - "@HarryTheDevOpsGuy"
+
+   - id: mCloudUptime
+     type: telegram
+     bottoken: MCLOUD_TG_TOKEN
+     groupid: '-1001225113709'
+     groupname: 'mCloud-Uptime'
+#      mentions:
+#         - "@HarryTheDevOpsGuy"
+
+   - id: email
+     type: sendgrid
+     sender: mcloudautomation@gmail.com
+     token: "${MCLOUD_SENDGRID_API_KEY}"
+     email:
+       - harrythedevopsguy@gmail.com
+  #  - id: ifemail
+  #    type: sendgrid
+  #    sender: mcloudautomation@gmail.com
+  #    token: "${MCLOUD_SENDGRID_API_KEY}"
+  #    email:
+  #      - innovativefolks@gmail.com
+  #      - harrythedevopsguy@gmail.com
+
+  #  - id: shaniemail
+  #    type: sendgrid
+  #    sender: mcloudautomation@gmail.com
+  #    token: "${MCLOUD_SENDGRID_API_KEY}"
+  #    email:
+  #      - sanjoodevimaurya@gmail.com
+  #      - harrythedevopsguy@gmail.com
+
+   - id: shanitelegram
+     type: telegram
+     bottoken: "${MCLOUD_TELEGRAM_TOKEN}"
+     groupid: '-710137744' # mcloud-ocs
+#      mentions:
+#         - "@HarryTheDevOpsGuy"
+#         - "@Shani"
+
+   - id: tg_chandan
+     type: telegram
+     bottoken: "${MCLOUD_TELEGRAM_TOKEN}"
+     groupid: '1535115412' # chandan
+     mentions:
+        - "@HarryTheDevOpsGuy"
+
+
+probes:
+    - id: commonssl
+      # name: SSLCert Monitor
+      notification:
+        - slackid
+        - mcloudtelegram
+      urls:
+         - https://mstatus-web.onrender.com/
+         - https://facebook.com
+         - https://www.findbestopensource.com/home
+         - https://www.linuxhelp.com/
+         - https://www.middlewareinventory.com/
+         - https://ocswebexperts.com/
+      reminder: 90
+
+    - id: TheVSP
+      name: TheVSP
+      repeate_interval: 240
+      timeout: 10
+      notification:
+        # - slackid
+        - mcloudtelegram
+        # - email
+        # - mCloudUptime
+      email:
+        - thevspassociates@gmail.com
+        - harrythedevopsguy@gmail.com
+      tgmentions:
+        - 'Harry:1978087031'
+        - '@ExpertSatya'
+      urls:
+        - https://mstatus-web.onrender.com/
+        - http://thevsp.in/
+        - https://www.onlinefront.in/
+        - https://webgrowsolution.com/
+        - https://www.acnosoft.com/
